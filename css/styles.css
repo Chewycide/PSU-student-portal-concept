@@ -1,0 +1,40 @@
+body, h1, p {
+    margin: 0 auto;
+}
+
+.float-container {
+    height: 100%;
+    position: fixed;
+}
+.left-side {
+    background-color: blue;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.right-side {
+    background-color: yellow;
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+.header {
+    margin: 2em auto;
+    text-align: center;
+}
+
+.student-portal {
+    line-height: 2;
+}
+
+.middle {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.footer {
+    text-align: left;
+    margin-top: 15rem;
+}
