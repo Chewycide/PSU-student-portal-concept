@@ -5,51 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/styles.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>Student Portal</title>
 </head>
 
 <body>
-    <nav class="nav navbar-expand-lg bg-primary">
-        <div>
-            <a href="" class="navbar-brand">
-                <img src="images/PSU_logo.png" alt="PSU_logo">
-                PANGASINAN STATE UNIVERSITY
-            </a>
-        </div>
-    </nav>
+    <div class="login-form-bg"></div>
+    <div class="login-form-container">
+        <div class="container">
 
-    <div class="row">
-        <div class="left-side col" style="background-color: blue;">
-            <p>LOREM IPSUM</p>
-        </div>
-    
-        <div class="right-side col-md-6">
-            <div class="middle row">
-                <label for="username">Username:</label><br>
-                <input type="text" name="username" id="username" placeholder="e.g. YY-UR-XXXX"><br>
-                <label for="password">Password:</label><br>
-                <input type="text" name="password" id="password"><br>
-                <input type="button" value="login">
-                <input type="button" value="reset">
-            </div>
-            <div class="footer row">
-                <p>All rights reserved, DATALINE Philippines. August 2003 8th Floor, Ortigas Building, Ortigas Avenue
-                    Pasig
-                    City, Philippines
-                    Telephone (+632) 634-1529, 634-1958
-                </p>
+            <div class="row">
+                <div class="logo-container">
+                    <img src="images/PSU_logo.png" alt="psu_logo" class="psu-logo">
+                </div>
+                <span class="student-portal-text">STUDENT PORTAL</span>
+            </div class="row">
+            <div class="row">
+                <form action="" class="login-form">
+
+                    <div class="form-floating mb-0">
+                        <input type="text" name="userid" id="userid" class="form-control" placeholder="user@example.com">
+                        <label for="userid" class="form-label">PSU ID:</label>
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="password">
+                        <label for="password" class="form-label">PASSWORD:</label>
+                    </div>
+
+                    <div>
+                        <a href="">forgot password?</a>
+                    </div>
+                    <input type="button" value="LOGIN" class="login-button">
+                </form>
             </div>
         </div>
     </div>
 
-
 </body>
 
 </html>
+
+<!-- TODO: style "forgot password" -->
+<!-- TODO: style login button -->
+<!-- TODO: make "STUDENT PORTAL" bigger -->
+<!-- TODO: look for good professional font -->
+<!-- TODO: borders -->
