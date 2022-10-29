@@ -32,6 +32,7 @@ body, html {
     padding-bottom: 50px;
     text-align: center;
     color: gold;
+    font-size: 20px;
 }
 
 .psu-logo {
@@ -40,4 +41,21 @@ body, html {
     display: block;
     height: 150px;
     width: 150px;
+}
+
+.forgot-password-container {
+    text-align: end;
+}
+
+.forgot-password {
+    color: grey;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: gold;
+}
+
+.btn-primary {
+    width: 100%;
 }
