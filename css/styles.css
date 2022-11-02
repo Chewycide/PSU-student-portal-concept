@@ -5,7 +5,7 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: 'Secular One', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 .login-form-bg {
@@ -71,26 +71,48 @@ body, html {
 /* Navbar */
 
 #navigation-bar {
+    padding: 0 7%;
     background-color: lightblue;
     color: #000;
 }
 
-.navbar {
-    height: 4.5rem;
-    padding: 0.4rem 1rem;
-}
-.logo-container {
-    height: 100%;
+/* .navbar-brand {
+    font-weight: 700;
+    font-size: 2rem;
+} */
+
+.psu-logo-nav {
+    width: 30%;
 }
 
-a.navbar-brand {
-    height: 100%;
+/* Userinfo */
+
+#userinfo {
+    padding: 2% 7%;
+    background-color: red;
+}
+
+.psu-id {
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.psu-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+.psu-course {
+    font-weight: 400;
     font-size: 1.5rem;
 }
 
-.psu-logo-nav {
-    height: 100%;
-    width: auto;
-    margin: auto;
-    padding-right: 2rem;
+/* Enrolled */
+
+#enrolled {
+    padding: 2% 7%;
+    background-color: yellow;
+}
+
+#footer {
+    padding: 2% 7%;
 }
