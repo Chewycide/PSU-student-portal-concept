@@ -63,7 +63,7 @@ body, html {
 
 .btn-primary {
     width: 100%;
-    background-color: blue;
+    background-color: #010144;
     border: none;
 }
 
@@ -89,6 +89,10 @@ body, html {
     color: #fff;
 }
 
+.navbar-brand:hover {
+    color: #0202c7;
+}
+
 .psu-logo-nav {
     width: 30%;
 }
@@ -98,41 +102,41 @@ body, html {
     border-width: 5px;
 }
 
-.navbar-toggler:hover {
+.navbar-toggler:hover, .close-offcanvas:hover {
     background-color: #0202c7;
 }
 
 .offcanvas {
-    background: rgb(1,1,68);
-    background: linear-gradient(0deg, rgba(1,1,68,1) 0%, rgba(1,1,114,1) 100%);
     color: #fff;
 }
 
-.hr-offcanvas {
-    border-style: none none solid none;
-    border-width: 0 0 3px 0;
-    border-color: #010144;
+.offcanvas-header {
+    background: rgb(1,1,68);
+    background: linear-gradient(0deg, rgba(1,1,68,1) 0%, rgba(1,1,114,1) 100%);
+    box-shadow: 0 3px 5px #000;
 }
 
 .menu-link {
     border-bottom: 1px solid #010144;
     padding: 1rem;
-    color: #fff;
+    color: #000;
     transition: transform 0.3s;
 }
 
 .menu-link:hover {
+    color: #727201;
     transform: translate(10px);
-    color: #fff;
-}
-
-.close-offcanvas {
-    color: #fff;
 }
 
 .logout-button {
     padding: 1rem 0;
     text-align: center;
+    background-color: #010144;
+    color: #fff;
+}
+
+.logout-button:hover {
+    color: #0202c7;
 }
 
 /* Userinfo */
@@ -157,16 +161,22 @@ body, html {
     font-size: 1.5rem;
 }
 
+.row-items:hover {
+    color: #727201;
+}
+
 /* Enrolled */
 
 #enrolled {
     padding: 2% 7%;
-    background: rgb(1,1,68);
-    background: linear-gradient(0deg, rgba(1,1,68,1) 0%, rgba(1,1,114,1) 100%);
     color: #000;
     position: relative;
-    box-shadow: 0 2px 5px #000;
-    z-index: 5;
+    z-index: 3;
+}
+
+th,td {
+    color: #000;
+    border-color: #000;
 }
 
 /* Footer */
@@ -176,11 +186,12 @@ body, html {
     position: absolute;
     bottom: 0;
     z-index: -1;
-    color: #000;
-    background-color: red;
+    color: #fff;
+    background-color: #010144;
+    text-align: center;
+    font-size: 0.5rem;
 }
 
 .footer-container {
-    padding: 2% 7%;
-    width: 100%;
+    padding: 1% 7%;
 }
