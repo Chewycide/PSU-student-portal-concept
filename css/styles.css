@@ -72,8 +72,14 @@ body, html {
 
 #navigation-bar {
     padding: 0 7%;
-    background-color: #010172;
+    background: rgb(1,1,68);
+    background: linear-gradient(0deg, rgba(1,1,68,1) 0%, rgba(1,1,114,1) 100%);
+    border-bottom: 3px solid #010144;
+    box-shadow: 0 2px 5px #000;
+    position: sticky;
+    z-index: 10;
 }
+
 
 .psu-logo-offcanvas {
     width: 20%;
@@ -88,13 +94,53 @@ body, html {
 }
 
 .navbar-toggler {
+    border-radius: 0;
+    border-width: 5px;
+}
+
+.navbar-toggler:hover {
     background-color: #0202c7;
 }
+
+.offcanvas {
+    background: rgb(1,1,68);
+    background: linear-gradient(0deg, rgba(1,1,68,1) 0%, rgba(1,1,114,1) 100%);
+    color: #fff;
+}
+
+.hr-offcanvas {
+    border-style: none none solid none;
+    border-width: 0 0 3px 0;
+    border-color: #010144;
+}
+
+.menu-link {
+    border-bottom: 1px solid #010144;
+    padding: 1rem;
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.menu-link:hover {
+    transform: translate(10px);
+    color: #fff;
+}
+
+.close-offcanvas {
+    color: #fff;
+}
+
+.logout-button {
+    padding: 1rem 0;
+    text-align: center;
+}
+
 /* Userinfo */
 
 #userinfo {
     padding: 2% 7%;
     background-color: #fff;
+    z-index: 3;
 }
 
 .psu-id {
@@ -115,14 +161,26 @@ body, html {
 
 #enrolled {
     padding: 2% 7%;
-    background-color: #010172;
-    color: #fff;
+    background: rgb(1,1,68);
+    background: linear-gradient(0deg, rgba(1,1,68,1) 0%, rgba(1,1,114,1) 100%);
+    color: #000;
+    position: relative;
+    box-shadow: 0 2px 5px #000;
+    z-index: 5;
 }
 
-.table {
-    color: #fff;
-}
+/* Footer */
 
 #footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    color: #000;
+    background-color: red;
+}
+
+.footer-container {
     padding: 2% 7%;
+    width: 100%;
 }
