@@ -1,0 +1,9 @@
+# Byte-compiled
+__pycache__/
+
+# Environment
+.venv/
+
+# Flask
+instance/
+.webassets-cache
