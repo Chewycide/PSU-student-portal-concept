@@ -3,23 +3,25 @@
 {% block title %}Login Page{% endblock %}
 <!-- BODY -->
 {% block body %}
-<div class="background-image">
-    <img src="" alt="PSU URDANETA BG IMAGE">
-</div>
-<div class="login-form-container">
-    <div class="login-form">
-        <form action="{{ url_for('login_page') }}" method="POST" novalidate>
-            {{ login_form.hidden_tag() }}
-            <div>
-                {{ login_form.psu_id.label }} <br>
-                {{ login_form.psu_id}} {{ login_form.psu_id.errors }}
-            </div>
-            <div>
-                {{ login_form.password.label }} <br>
-                {{ login_form.password }} {{ login_form.password.errors }}
-            </div>
-            {{ login_form.login }}
-        </form>
+<div class="row">
+    <div class="background-image col-lg-6">
+        <img src="" alt="PSU URDANETA BG IMAGE">
+    </div>
+    <div class="login-form-container col-lg-6">
+        <div class="login-form">
+            <form action="{{ url_for('login_page') }}" method="POST" novalidate>
+                {{ login_form.hidden_tag() }}
+                <div>
+                    {{ login_form.psu_id.label }} <br>
+                    {{ login_form.psu_id}} {{ login_form.psu_id.errors }}
+                </div>
+                <div>
+                    {{ login_form.password.label }} <br>
+                    {{ login_form.password }} {{ login_form.password.errors }}
+                </div>
+                {{ login_form.login }}
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
