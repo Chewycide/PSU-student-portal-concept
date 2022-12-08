@@ -3,13 +3,52 @@ html, body {
 }
 
 
-.login-form-container {
-    padding: 2rem 4rem;
+body {
+    overflow: hidden;
+}
 
-    .login-form {
-        padding: 3rem;
+
+.background-image {
+    position: relative;
+    text-align: center;
+    z-index: -1;
+    img {
+        height: 100%;
+        transform: translate(-10%);
+        filter: blur(1.2px);
+    }
+    .login-quote {
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        color: #fff;
+        padding: 1.3rem;
+        position: absolute;
+        bottom: 2rem;
+        left: 5rem;
     }
 }
+
+
+.login-form-container {
+    padding: 2rem 3rem;
+    position: relative;
+    z-index: 10;
+    background-color: #fff;
+
+    .login-form {
+        width: 100%;
+        padding: 3rem 5rem;
+    }
+    .login-psu-logo {
+        margin: 0;
+        width: 140px;
+    }
+    .login-student-portal {
+        margin: 3.5rem 0;
+    }
+}
+
 
 .login-psu-logo {
     margin: 50px;

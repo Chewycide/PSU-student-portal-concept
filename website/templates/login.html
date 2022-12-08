@@ -4,13 +4,16 @@
 <!-- BODY -->
 {% block body %}
 <div class="row h-100">
-    <div class="background-image col-md-6 d-none d-md-block">
-        <img src="" alt="PSU URDANETA BG IMAGE">
+    <div class="background-image col-lg-7 d-none d-md-none d-lg-block h-100">
+        <img src="{{ url_for('static', filename='images/PSUfront.jpg') }}" alt="PSU URDANETA BG IMAGE">
+        <div class="blockquote login-quote">
+            <p>Random Quote</p>
+        </div>
     </div>
-    <div class="login-form-container col-md-6 border-start h-100">
-        <div class="login-form text-center h-100 border">
-            <img class="login-psu-logo" src="" alt="PSU LOGO">
-            <p class="mb-5 login-student-portal">STUDENT PORTAL</p>
+    <div class="login-form-container col-lg-5 border-start h-100">
+        <div class="login-form text-center h-100 border rounded">
+            <img class="login-psu-logo" src="{{ url_for('static', filename='images/PSULOGO.png') }}" alt="PSU LOGO">
+            <p class="login-student-portal">STUDENT PORTAL</p>
             <hr>
             <form action="{{ url_for('login_page') }}" method="POST" novalidate>
                 {{ login_form.hidden_tag() }}
@@ -23,7 +26,7 @@
                     {{ login_form.password.label(class='form-label') }}
                 </div>
                 <div class="d-grid">
-                    {{ login_form.login(class='btn btn-dark') }}
+                    {{ login_form.login(class='btn btn-primary') }}
                 </div>
             </form>
         </div>
