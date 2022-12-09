@@ -2,10 +2,6 @@ html, body {
   height: 100%;
 }
 
-body {
-  overflow: hidden;
-}
-
 .background-image {
   position: relative;
   text-align: center;
@@ -51,6 +47,21 @@ body {
 
 html, body {
   height: 100%;
+}
+
+.nav-logo {
+  width: 100px;
+}
+
+.nav-container {
+  padding: 1rem 12rem;
+}
+
+.content-wrapper {
+  padding: 1rem 12rem;
+}
+.content-wrapper .profile-pic {
+  width: 5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

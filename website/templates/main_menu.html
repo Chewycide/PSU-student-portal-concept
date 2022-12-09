@@ -4,14 +4,58 @@
 <!-- BODY -->
 {% block body %}
 <!-- Navbar -->
-<nav class="navbar navbar-expand">
-    <div class="container-fluid">
-
-    </div>
-</nav>
+<div class="nav-wrapper">
+    <nav class="navbar navbar-expand">
+        <div class="container-fluid nav-container">
+            <a href="#" class="navbar-brand">
+                <img src="{{ url_for('static', filename='images/PSULOGO.png') }}" alt="" class="nav-logo">
+                <span>MAIN MENU</span>
+            </a>
+            <a href="" class="d-flex btn btn-primary">LOGOUT</a>
+        </div>
+    </nav>
+</div>
 <!-- Content -->
-<div>
-
+<div class="row row-cols-1 row-cols-lg-2 g-4 content-wrapper">
+    <!-- Nav card -->
+    <div class="col">
+        <div id="navigation" class="card text-center h-100">
+            <div class="card-header">NAVIGATION</div>
+            <div class="list-group list-group-flush">
+                <a href="" class="list-group-item list-group-item-action">Enrollment / Registration</a>
+                <a href="" class="list-group-item list-group-item-action">Individual Evaluation Report</a>
+                <a href="" class="list-group-item list-group-item-action">Student Ledger of Accounts</a>
+                <a href="" class="list-group-item list-group-item-action">Faculty Performance Evaluation</a>
+                <a href="" class="list-group-item list-group-item-action">Student Election</a>
+                <a href="" class="list-group-item list-group-item-action">MS User Account and Institutional Email</a>
+                <a href="" class="list-group-item list-group-item-action">Request for Subject Grade Completion</a>
+                <a href="" class="list-group-item list-group-item-action">Online Public Access Catalog</a>
+                <a href="" class="list-group-item list-group-item-action">Library Services</a>
+            </div>
+        </div>
+    </div>
+    <!-- User card -->
+    <div class="col">
+        <div id="quickInfo" class="card text-center h-100">
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='images/user.png') }}" alt="profilePic" class="profile-pic">
+                <hr>
+                <h3 class="card-title">19-UR-XXXX</h3>
+                <h6 class="card-subtitle">LASTNAME, FIRSTNAME MIDDLEINITIAL</h6>
+                <p class="text-muted">BACHELOR OF SCIENCE IN SOMETHING</p>
+                <hr>
+                <blockquote class="blockquote mb-0">
+                    <p>Insert Quote Here.</p>
+                    <footer class="blockquote-footer">You</footer>
+                </blockquote>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="" class="list-group-item list-group-item-action">Student Master File Maintenance</a>
+                <a href="" class="list-group-item list-group-item-action">Change Password</a>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Footer -->
+{% include 'footer.html' %}
 {% endblock %}
