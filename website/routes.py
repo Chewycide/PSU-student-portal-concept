@@ -10,3 +10,8 @@ def login_page():
     if login_form.validate_on_submit():
         return redirect(url_for('login_page'))
     return render_template('login.html', login_form = login_form)
+
+
+@app.route('/menu')
+def main_menu():
+    return render_template('main_menu.html')
