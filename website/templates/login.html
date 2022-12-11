@@ -29,8 +29,10 @@
                     {{ login_form.login(class='btn btn-primary') }}
                 </div>
             </form>
+            <div class="flex-grow-1">
+                {% include 'footer.html' %}
+            </div>
         </div>
-        {% include 'footer.html' %}
     </div>
 </div>
 {% endblock %}

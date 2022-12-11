@@ -1,0 +1,14 @@
+@use '../utilities/_variables.scss' as var;
+
+html, body {
+    height: 100%;
+}
+
+
+.content-wrapper {
+    padding: 1rem var.$padding-sides;
+
+    .profile-pic {
+        width: 5rem;
+    }
+}

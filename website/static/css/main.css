@@ -1,3 +1,11 @@
+.nav-logo {
+  width: 100px;
+}
+
+.nav-container {
+  padding: 1rem 12rem;
+}
+
 html, body {
   height: 100%;
 }
@@ -31,7 +39,8 @@ html, body {
 }
 .login-form-container .login-form {
   width: 100%;
-  padding: 3rem 5rem;
+  padding: 3rem 5rem 0;
+  box-shadow: 0 4px 20px;
 }
 .login-form-container .login-psu-logo {
   margin: 0;
@@ -47,14 +56,6 @@ html, body {
 
 html, body {
   height: 100%;
-}
-
-.nav-logo {
-  width: 100px;
-}
-
-.nav-container {
-  padding: 1rem 12rem;
 }
 
 .content-wrapper {

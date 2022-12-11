@@ -1,2 +1,8 @@
-@use 'pages/login_page.scss';
-@use 'pages/main_menu.scss';
+@use 'utilities/variables';
+
+
+@use 'layout/navbar';
+
+
+@use 'pages/login';
+@use 'pages/main_menu';
