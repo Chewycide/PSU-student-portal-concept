@@ -4,17 +4,7 @@
 <!-- BODY -->
 {% block body %}
 <!-- Navbar -->
-<div class="nav-wrapper">
-    <nav class="navbar navbar-expand">
-        <div class="container-fluid nav-container">
-            <a href="#" class="navbar-brand">
-                <img src="{{ url_for('static', filename='images/PSULOGO.png') }}" alt="" class="nav-logo">
-                <span>MAIN MENU</span>
-            </a>
-            <a href="" class="d-flex btn btn-primary">LOGOUT</a>
-        </div>
-    </nav>
-</div>
+{% include 'navbar.html' %}
 <!-- Content -->
 <div class="row row-cols-1 row-cols-lg-2 g-4 content-wrapper">
     <!-- Nav card -->
