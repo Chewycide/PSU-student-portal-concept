@@ -6,6 +6,10 @@
   padding: 1rem 12rem;
 }
 
+.footer {
+  color: #adb5bd;
+}
+
 html, body {
   height: 100%;
 }
