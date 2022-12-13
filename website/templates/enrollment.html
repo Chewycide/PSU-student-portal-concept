@@ -6,7 +6,74 @@
 <!-- Navbar -->
 {% include 'navbar.html' %}
 <!-- Content -->
-<div>
-    
+<!-- Tabs -->
+<div class="row content-wrapper">
+    <div class="col-lg-4 d-none d-md-none d-lg-block">
+        <div id="enrollmentPageAnchors" class="list-group text-center sticky-lg-top">
+            <a href="#studentData" class="list-group-item list-group-item-action">Student Data</a>
+            <a href="#subjectSchedule" class="list-group-item list-group-item-action">Subject Schedule</a>
+            <a href="#advisedSubjects" class="list-group-item list-group-item-action">Advised Subjects</a>
+            <a href="#notAllowed" class="list-group-item list-group-item-action">Not Allowed to Take</a>
+            <a href="#applicableDiscount" class="list-group-item list-group-item-action">Applicable Discount</a>
+            <a href="#accountSummary" class="list-group-item list-group-item-action">Account Summary</a>
+            <a href="#paymentSchedule" class="list-group-item list-group-item-action">Payment Schedule</a>
+            <br>
+            <a href="{{ url_for('main_menu') }}" class="btn btn-outline-primary">Back to Main Menu</a>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div data-bs-spy="scroll" data-bs-target="#enrollmentPageAnchors" tabindex="0" class="">
+            <div id="studentData" class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Student Data</h3>
+                    <p>Student ID No: <span></span></p>
+                    <p>Full Name on Record: <span></span></p>
+                    <p>Previous Enrollment: <span></span></p>
+                    <p>Course /Program: <span></span></p>
+                    <p>Year Level: <span></span></p>
+                    <p>School Year: <span></span></p>
+                    <p>Semester: <span></span></p>
+                    <p>Curriculum Ref. No.: <span></span></p>
+                </div>
+            </div>
+            <hr>
+            <div id="subjectSchedule" class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Subject Schedule</h3>
+                </div>
+            </div>
+            <hr>
+            <div id="advisedSubjects" class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Advised Subjects</h3>
+                </div>
+            </div>
+            <hr>
+            <div id="notAllowed" class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Not Allowed to Take</h3>
+                </div>
+            </div>
+            <hr>
+            <div id="applicableDiscount" class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Applicable Discount</h3>
+                </div>
+            </div>
+            <hr>
+            <div id="accountSummary" class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Account Summary</h3>
+                </div>
+            </div>
+            <hr>
+            <div id="paymentSchedule" class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Payment Schedule</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
