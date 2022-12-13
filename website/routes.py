@@ -3,7 +3,9 @@ from flask import render_template, redirect, url_for
 from website.forms import LoginForm
 
 
-# ---------- APP INSTANCE ---------- #
+# ---------- ROUTES ---------- #
+
+# Login route
 @app.route('/', methods=['POST', 'GET'])
 def login_page():
     login_form = LoginForm()
@@ -12,6 +14,13 @@ def login_page():
     return render_template('login.html', login_form = login_form)
 
 
-@app.route('/menu')
+# Main Menu route
+@app.route('/mainmenu')
 def main_menu():
     return render_template('main_menu.html')
+
+
+# Enrollment/Registration route
+@app.route('/enrollment')
+def enrollment():
+    return render_template('enrollment.html')
