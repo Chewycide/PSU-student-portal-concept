@@ -6,8 +6,8 @@
 <!-- Navbar -->
 {% include 'navbar.html' %}
 <!-- Content -->
-<!-- Tabs -->
 <div class="row content-wrapper">
+    <!-- Tabs -->
     <div class="col-lg-4 d-none d-md-none d-lg-block">
         <div id="enrollmentPageAnchors" class="list-group text-center sticky-lg-top">
             <a href="#studentData" class="list-group-item list-group-item-action">Student Data</a>
@@ -21,6 +21,7 @@
             <a href="{{ url_for('main_menu') }}" class="btn btn-outline-primary">Back to Main Menu</a>
         </div>
     </div>
+    <!-- Data -->
     <div class="col-lg-8">
         <div data-bs-spy="scroll" data-bs-target="#enrollmentPageAnchors" tabindex="0" class="">
             <div id="studentData" class="card">
@@ -40,36 +41,114 @@
             <div id="subjectSchedule" class="card">
                 <div class="card-body">
                     <h3 class="card-title">Subject Schedule</h3>
+                    <!-- Table -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Stat</th>
+                                <th>Class Code</th>
+                                <th>Subject</th>
+                                <th>Units</th>
+                                <th>Unit Hours</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Days</th>
+                                <th>Room</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <p class="text-muted">Total Units: </p>
+                    <p class="text-muted">Total Unit Hours: </p>
+                    <div class="text-center">
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-danger">Delete All Checked Items</button>
+                            <button class="btn btn-outline-secondary">Save All For Addition</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr>
             <div id="advisedSubjects" class="card">
                 <div class="card-body">
                     <h3 class="card-title">Advised Subjects</h3>
+                    <!-- Table -->
+                    <table class="table">
+                        <tr>
+                            <th>Subject Code</th>
+                            <th>Description</th>
+                            <th>Units</th>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <hr>
             <div id="notAllowed" class="card">
                 <div class="card-body">
                     <h3 class="card-title">Not Allowed to Take</h3>
+                    <!-- Table -->
+                    <table class="table">
+                        <tr>
+                            <th>Subject Code</th>
+                            <th>Description</th>
+                            <th>Units</th>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <hr>
             <div id="applicableDiscount" class="card">
                 <div class="card-body">
                     <h3 class="card-title">Applicable Discount</h3>
+                    <!-- Table -->
+                    <table class="table">
+                        <tr>
+                            <th>Stat</th>
+                            <th>Scholarship/Discount</th>
+                            <th>Discount</th>
+                            <th>Stipend</th>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <hr>
             <div id="accountSummary" class="card">
                 <div class="card-body">
                     <h3 class="card-title">Account Summary</h3>
+                    <p class="text-muted">
+                        Huwag mag alala, libre ang matrikula sa Pangasinan State University sa ilalim ng REPUBLIC ACT No. 10931.
+                        Ang halaga na iyong nakikita sa pahinang ito sa pagkumpirma ng iyong pagpapatala sa panibagong semestre ay
+                        ang halagang kailangang bayaran ng gobyerno sa paaralan para sa iyong pag-aaral. Kaya't huwag magagam-agam
+                        at ikaw ay magpatuloy. Sa mga bagong mag-aaral, maligayang pagdating sa PSU at sa mga dating mag-aaral,
+                        maligayang pagbabalik sa inyo. Nawa'y mapagtagumpayan ninyo ang inyong pag-aaral!
+                    </p>
+                    <!-- Table -->
+                    <table class="table">
+                        <tr>
+                            <th></th>
+                            <th>Particulars</th>
+                            <th>Subtotal</th>
+                            <th>Amount</th>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <hr>
             <div id="paymentSchedule" class="card">
                 <div class="card-body">
                     <h3 class="card-title">Payment Schedule</h3>
+                    <!-- Table -->
+                    <table class="table">
+                        <tr>
+                            <th></th>
+                            <th>Payment Schedule</th>
+                            <th>Due Date</th>
+                            <th>Amount</th>
+                            <th>Non-SCH</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
