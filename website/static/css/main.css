@@ -6,10 +6,6 @@
   padding: 1rem 12rem;
 }
 
-.footer {
-  color: #adb5bd;
-}
-
 html, body {
   height: 100%;
 }
@@ -17,22 +13,41 @@ html, body {
 .background-image {
   position: relative;
   text-align: center;
-  z-index: -1;
 }
-.background-image img {
+.background-image .login-img {
   height: 100%;
   transform: translate(-10%);
-  filter: blur(1.2px);
+  z-index: -1;
 }
-.background-image .login-quote {
+.background-image .overlay {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  transition: background-color 1s;
+}
+.background-image .overlay:hover {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+}
+.background-image .overlay:hover .login-quote {
+  opacity: 1;
+}
+.background-image .login-quote {
+  opacity: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0px;
   color: #fff;
-  padding: 1.3rem;
+  padding: 1rem;
   position: absolute;
   bottom: 2rem;
   left: 5rem;
+  z-index: 2;
+  transition: opacity 1s;
 }
 
 .login-form-container {

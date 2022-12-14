@@ -5,14 +5,16 @@
 {% block body %}
 <div class="row h-100 g-0">
     <div class="background-image col-lg-7 d-none d-md-none d-lg-block h-100">
-        <img src="{{ url_for('static', filename='images/PSUfront.jpg') }}" alt="PSU URDANETA BG IMAGE">
-        <div class="blockquote login-quote">
-            <p>Random Quote</p>
+        <img src="{{ url_for('static', filename='images/PSUfront.jpg') }}" alt="PSU URDANETA BG IMAGE" class="login-img">
+        <div class="overlay">
+            <div class="blockquote login-quote">
+                <p>Random Quote</p>
+            </div>
         </div>
     </div>
     <div class="login-form-container col-lg-5 border-start h-100">
 
-        <div class="login-form h-100 border rounded d-flex flex-column">
+        <div class="login-form h-auto border rounded d-flex flex-column">
             <img class="login-psu-logo align-self-center" src="{{ url_for('static', filename='images/PSULOGO.png') }}" alt="PSU LOGO">
             <p class="login-student-portal align-self-center">STUDENT PORTAL</p>
             <hr>
