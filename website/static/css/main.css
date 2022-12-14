@@ -79,6 +79,7 @@ html, body {
 
 .content-wrapper {
   padding: 1rem 12rem;
+  width: 100%;
 }
 .content-wrapper .profile-pic {
   width: 5rem;
