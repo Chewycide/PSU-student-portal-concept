@@ -58,8 +58,9 @@ html, body {
 }
 .login-form-container .login-form {
   width: 100%;
-  padding: 3rem 5rem 0;
+  padding: 4rem 5rem;
   box-shadow: 0 4px 20px;
+  height: auto;
 }
 .login-form-container .login-psu-logo {
   margin: 0;
@@ -73,6 +74,12 @@ html, body {
   margin: 50px;
 }
 
+@media (max-width: 575.98px) {
+  .login-form-container .login-form {
+    padding: 1rem 2rem;
+    height: auto;
+  }
+}
 html, body {
   height: 100%;
 }

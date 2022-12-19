@@ -52,13 +52,16 @@ html, body {
 
     .login-form {
         width: 100%;
-        padding: 3rem 5rem 0;
+        padding: 4rem 5rem;
         box-shadow: 0 4px 20px;
+        height: auto;
     }
+
     .login-psu-logo {
         margin: 0;
         width: 140px;
     }
+
     .login-student-portal {
         margin: 3.5rem 0;
     }
@@ -67,4 +70,24 @@ html, body {
 
 .login-psu-logo {
     margin: 50px;
+}
+
+
+// For sm Devices (less than 576px)
+@media (max-width: 575.98px) {
+
+    .login-form-container {
+
+        .login-form {
+            padding: 1rem 2rem;
+            height: auto;
+        }
+    }
+}
+
+
+// For md Devices (less than 768px)
+@media (max-width: 767.98px) {
+
+    // Pass
 }
