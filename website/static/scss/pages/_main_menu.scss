@@ -12,3 +12,17 @@ html, body {
         width: 5rem;
     }
 }
+
+// For sm Devices (less than 576px)
+@media (max-width: 575.98px) {
+
+
+    .content-wrapper {
+        padding: 1rem var.$sm-padding-sides;
+        margin: 0;
+    }
+
+    #quickInfo {
+        margin: 1rem auto;
+    }
+}

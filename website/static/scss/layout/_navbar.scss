@@ -8,3 +8,15 @@
 .nav-container {
     padding: 1rem var.$padding-sides;
 }
+
+
+// For sm Devices (less than 576px)
+@media (max-width: 575.98px) {
+
+    .nav-logo {
+        width: 40%;
+    }
+    .nav-container {
+        padding: 0 1rem;
+    }
+}
