@@ -1,8 +1,23 @@
-from website import app
+from website import app, login_manager
 from flask import render_template, redirect, url_for
+from flask_login import logout_user
 from website.forms import LoginForm
 
 
+# ---------- USER CALLBACK ---------- #
+@login_manager.user_loader
+def load_user(user_id):
+    pass
+
+
+# ---------- LOGOUT ---------- #
+@app.route('/logout')
+def logout():
+    """Logout user from the portal and redirect to login page"""
+    logout_user()
+    return redirect(url_for('login_page'))
+
+    
 # ---------- ROUTES ---------- #
 
 # Login route
