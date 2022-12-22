@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_login import LoginManager
-
+from flask_sqlalchemy import SQLAlchemy
 
 
 # ---------- APP INSTANCE ---------- #
@@ -9,6 +9,8 @@ app.config.from_pyfile('config.py')
 app.config['SECRET_KEY']
 
 
+# ---------- DATABASE MANAGER ---------- #
+db = SQLAlchemy(app)
 
 # ---------- LOGIN MANAGER ---------- #
 login_manager = LoginManager(app)
