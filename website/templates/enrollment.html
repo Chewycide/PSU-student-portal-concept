@@ -1,47 +1,47 @@
-{% extends 'base.html' %}
+{% extends 'base_pages.html' %}
 <!-- HEAD -->
-{% block title %}Enrollment/Registration{% endblock %}
+{% block title %}Student Master File Maintenance{% endblock %}
 <!-- BODY -->
 {% block body %}
-<!-- Navbar -->
-{% include 'navbar.html' %}
-<!-- Content -->
-<div class="row content-wrapper">
-    <!-- Tabs -->
-    <div class="col-lg-4 d-none d-md-none d-lg-block">
-        <div id="enrollmentPageAnchors" class="list-group text-center sticky-lg-top">
-            <a href="#studentData" class="list-group-item list-group-item-action">Student Data</a>
-            <a href="#subjectSchedule" class="list-group-item list-group-item-action">Subject Schedule</a>
-            <a href="#advisedSubjects" class="list-group-item list-group-item-action">Advised Subjects</a>
-            <a href="#notAllowed" class="list-group-item list-group-item-action">Not Allowed to Take</a>
-            <a href="#applicableDiscount" class="list-group-item list-group-item-action">Applicable Discount</a>
-            <a href="#accountSummary" class="list-group-item list-group-item-action">Account Summary</a>
-            <a href="#paymentSchedule" class="list-group-item list-group-item-action">Payment Schedule</a>
-            <br>
-            <a href="{{ url_for('main_menu') }}" class="btn btn-outline-primary">Back to Main Menu</a>
-        </div>
+<!-- inherit contents of the block body using super() -->
+{{ super() }}
+{% endblock body %}
+
+<!-- Inside block body -->
+
+<!-- SIDENAV -->
+{% block sidenav %}
+<a href="#studentData" class="list-group-item list-group-item-action">Student Data</a>
+<a href="#subjectSchedule" class="list-group-item list-group-item-action">Subject Schedule</a>
+<a href="#advisedSubjects" class="list-group-item list-group-item-action">Advised Subjects</a>
+<a href="#notAllowed" class="list-group-item list-group-item-action">Not Allowed to Take</a>
+<a href="#applicableDiscount" class="list-group-item list-group-item-action">Applicable Discount</a>
+<a href="#accountSummary" class="list-group-item list-group-item-action">Account Summary</a>
+<a href="#paymentSchedule" class="list-group-item list-group-item-action">Payment Schedule</a>
+<br>
+<a href="{{ url_for('main_menu') }}" class="btn btn-outline-primary">Back to Main Menu</a>
+{% endblock sidenav %}
+ 
+<!-- CONTENT -->
+{% block content %}
+<div id="studentData" class="card">
+    <div class="card-body">
+        <h3 class="card-title">Student Data</h3>
+        <p>Student ID No: <span></span></p>
+        <p>Full Name on Record: <span></span></p>
+        <p>Previous Enrollment: <span></span></p>
+        <p>Course /Program: <span></span></p>
+        <p>Year Level: <span></span></p>
+        <p>School Year: <span></span></p>
+        <p>Semester: <span></span></p>
+        <p>Curriculum Ref. No.: <span></span></p>
     </div>
-    <!-- Data -->
-    <div class="col-lg-8">
-        <div data-bs-spy="scroll" data-bs-target="#enrollmentPageAnchors" tabindex="0" class="">
-            <div id="studentData" class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Student Data</h3>
-                    <p>Student ID No: <span></span></p>
-                    <p>Full Name on Record: <span></span></p>
-                    <p>Previous Enrollment: <span></span></p>
-                    <p>Course /Program: <span></span></p>
-                    <p>Year Level: <span></span></p>
-                    <p>School Year: <span></span></p>
-                    <p>Semester: <span></span></p>
-                    <p>Curriculum Ref. No.: <span></span></p>
-                </div>
-            </div>
-            <hr>
-            <div id="subjectSchedule" class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Subject Schedule</h3>
-                    <!-- Table -->
+</div>
+<hr>
+<div id="subjectSchedule" class="card">
+    <div class="card-body">
+        <h3 class="card-title">Subject Schedule</h3>
+        <!-- Table -->
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -154,5 +154,4 @@
         </div>
     </div>
 </div>
-{% include 'footer.html' %}
-{% endblock %}
+{% endblock content %}

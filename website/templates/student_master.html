@@ -1,0 +1,43 @@
+{% extends 'base_pages.html' %}
+<!-- HEAD -->
+{% block title %}Student Master File Maintenance{% endblock %}
+<!-- BODY -->
+{% block body %}
+<!-- inherit contents of the block body using super() -->
+{{ super() }}
+{% endblock body %}
+
+<!-- Inside block body -->
+
+<!-- SIDENAV -->
+{% block sidenav %}
+<a href="#personalData" class="list-group-item list-group-item-action">Personal Data</a>
+<a href="#contactInformation" class="list-group-item list-group-item-action">Contact Information</a>
+<a href="#emergencyContact" class="list-group-item list-group-item-action">In Case of Emergency</a>
+<a href="#otherInformation" class="list-group-item list-group-item-action">Other Information</a>
+{% endblock sidenav %}
+
+<!-- CONTENT -->
+{% block content %}
+<div id="personalData" class="card">
+    <div class="card-body">
+        <h3 class="card-title">Personal Data</h3>
+    </div>
+</div>
+<div id="contactInformation" class="card">
+    <div class="card-body">
+        <h3 class="card-title">Contact Information</h3>
+    </div>
+</div>
+<div id="emergencyContact" class="card">
+    <div class="card-body">
+        <h3 class="card-title">In Case of Emergency</h3>
+    </div>
+</div>
+<div id="otherInformation" class="card">
+    <div class="card-body">
+        <h3 class="card-title">Other Information</h3>
+    </div>
+</div>
+{% endblock content %}
+
