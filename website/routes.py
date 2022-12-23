@@ -19,7 +19,6 @@ def logout():
 
 
 # ---------- ROUTES ---------- #
-
 @app.route('/', methods=['POST', 'GET'])
 def login_page():
     """Login route"""
@@ -40,3 +39,8 @@ def enrollment():
     """Enrollment route"""
     return render_template('enrollment.html')
 
+
+@app.route('/studentmaster')
+def student_master():
+    """Student Master File Maintenance"""
+    return render_template('student_master.html')
