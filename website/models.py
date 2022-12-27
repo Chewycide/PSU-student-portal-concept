@@ -17,7 +17,7 @@ class Student(UserMixin, db.Model):
         - StudentOtherInformation
     """
     __tablename__ = "students"
-    id = db.Column()
+    id = db.Column(db.Integer, primary_key=True)
 
     # model relationship objects
     student_personal_information = relationship("StudentInformation", back_populates="student")
@@ -26,9 +26,9 @@ class Student(UserMixin, db.Model):
     student_other_information = relationship("StudentInformation", back_populates="student")
 
     # Columns
-    student_id_number = db.Column()
-    student_fullname = db.Column()
-    student_password = db.Column()
+    student_id_number = db.Column(db.String(10), unique=True, nullable=False)
+    student_fullname = db.Column(db.String, nullable=False)
+    student_password = db.Column(db.String, nullable=False)
 
 
 class StudentPersonalInformation(db.Model):
@@ -39,7 +39,7 @@ class StudentPersonalInformation(db.Model):
         'Student' model
     """
     __tablename__ = "students_personal_info"
-    id = db.Column()
+    id = db.Column(db.Integer, primary_key=True)
 
     # parent_student_id is the primary key of the 'Student' model
     parent_student_id = db.Column(db.Integer, db.ForeignKey("students.id"))
@@ -48,19 +48,19 @@ class StudentPersonalInformation(db.Model):
     student = relationship("Student", back_populates="student_personal_information")
 
     # Personal information
-    sur_name = db.Column()
-    first_name = db.Column()
-    middle_name = db.Column()
-    sex = db.Column()
+    sur_name = db.Column(db.String)
+    first_name = db.Column(db.String)
+    middle_name = db.Column(db.String)
+    sex = db.Column(db.String(1))
     # NOTE: research about how to store images in database
-    nationality = db.Column()
-    religion = db.Column()
-    birth_date = db.Column()
-    birth_place = db.Column()
-    civil_status = db.Column()
-    birth_order = db.Column()
-    learner_reference_num = db.Column()
-    mother_tongue = db.Column()
+    nationality = db.Column(db.String)
+    religion = db.Column(db.String)
+    birth_date = db.Column(db.String)
+    birth_place = db.Column(db.String)
+    civil_status = db.Column(db.String)
+    birth_order = db.Column(db.String)
+    learner_reference_num = db.Column(db.Integer)
+    mother_tongue = db.Column(db.String)
 
 
 class StudentContactInformation(db.Model):
@@ -71,7 +71,7 @@ class StudentContactInformation(db.Model):
         'Student' model
     """
     __tablename__ = "students_contact_info"
-    id = db.Column()
+    id = db.Column(db.Integer, primary_key=True)
 
     # parent_student_id is the primary key of the 'Student' model
     parent_student_id = db.Column(db.Integer, db.ForeignKey("students.id"))
@@ -80,11 +80,11 @@ class StudentContactInformation(db.Model):
     student = relationship("Student", back_populates="student_contact_information")
 
     # Contact information
-    postal_address = db.Column()
-    home_phone_no = db.Column()
-    mobile_phone_no = db.Column()
-    email_address = db.Column()
-    residential_address = db.Column()
+    postal_address = db.Column(db.String)
+    home_phone_no = db.Column(db.Integer)
+    mobile_phone_no = db.Column(db.Integer)
+    email_address = db.Column(db.String)
+    residential_address = db.Column(db.String)
 
 
 class StudentEmergencyInformation(db.Model):
@@ -95,7 +95,7 @@ class StudentEmergencyInformation(db.Model):
         'Student' model
     """
     __tablename__ = "students_emergency_info"
-    id = db.Column()
+    id = db.Column(db.Integer, primary_key=True)
 
     # parent_student_id is the primary key of the 'Student' model
     parent_student_id = db.Column(db.Integer, db.ForeignKey("students.id"))
@@ -104,11 +104,11 @@ class StudentEmergencyInformation(db.Model):
     student = relationship("Student", back_populates="student_emergency_information")
 
     # Emergency Information
-    contact_person = db.Column()
+    contact_person = db.Column(db.String)
     # NOTE: cp is short for contact person
-    cp_relationship = db.Column()
-    home_phone_no = db.Column()
-    mobile_phone_no = db.Column()
+    cp_relationship = db.Column(db.String)
+    home_phone_no = db.Column(db.Integer)
+    mobile_phone_no = db.Column(db.Integer)
 
 
 class StudentOtherInformation(db.Model):
@@ -116,7 +116,7 @@ class StudentOtherInformation(db.Model):
         Other information of the student
     """
     __tablename__ = "students_other_info"
-    id = db.Column()
+    id = db.Column(db.Integer, primary_key=True)
 
     # parent_student_id is the primary key of the 'Student' model
     parent_student_id = db.Column(db.Integer, db.ForeignKey("students.id"))
@@ -125,5 +125,5 @@ class StudentOtherInformation(db.Model):
     student = relationship("Student", back_populates="student_other_information")
 
     # Other information
-    financial_source = db.Column()
-    exam_interview_date = db.Column()
+    financial_source = db.Column(db.String)
+    exam_interview_date = db.Column(db.String)

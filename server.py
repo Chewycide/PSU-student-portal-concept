@@ -1,4 +1,5 @@
 from website import app, db
+import website.models
 
 
 if __name__ == '__main__':
