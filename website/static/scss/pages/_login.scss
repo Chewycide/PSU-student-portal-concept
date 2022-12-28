@@ -45,16 +45,16 @@ html, body {
 
 
 .login-form-container {
-    padding: 2rem 3rem;
+    padding: 1rem;
     position: relative;
     z-index: 10;
     background-color: #fff;
 
     .login-form {
         width: 100%;
-        padding: 4rem 5rem;
+        padding: 3rem 4rem;
         box-shadow: 0 4px 20px;
-        height: auto;
+        height: 100%;
     }
 
     .login-psu-logo {
@@ -70,6 +70,11 @@ html, body {
 
 .login-psu-logo {
     margin: 50px;
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
 }
 
 
@@ -91,3 +96,4 @@ html, body {
 
     // Pass
 }
+

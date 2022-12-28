@@ -18,15 +18,23 @@
             <img class="login-psu-logo align-self-center" src="{{ url_for('static', filename='images/PSULOGO.png') }}" alt="PSU LOGO">
             <p class="login-student-portal align-self-center">STUDENT PORTAL</p>
             <hr>
-            <form action="{{ url_for('login_page') }}" method="POST" novalidate class="flex-grow-1">
+            <form action="{{ url_for('login_page') }}" method="POST" novalidate class="flex-grow-1 needs-validation">
                 {{ login_form.hidden_tag() }}
                 <div class="form-floating mb-3">
                     {{ login_form.psu_id(class = 'form-control', placeholder='19-UR-1234')}}
                     {{ login_form.psu_id.label(class='form-label', for='psuID') }}
+
+                    {% for error in login_form.psu_id.errors %}
+                    <span class="error">{{ error }}</span>
+                    {% endfor %}
                 </div>
                 <div class="form-floating mb-3">
                     {{ login_form.password(class='form-control', placeholder='password') }}
                     {{ login_form.password.label(class='form-label') }}
+
+                    {% for error in login_form.password.errors %}
+                    <span class="error">{{ error }}</span>
+                    {% endfor %}
                 </div>
                 <div class="d-grid">
                     {{ login_form.login(class='btn btn-primary') }}

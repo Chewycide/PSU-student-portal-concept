@@ -14,6 +14,10 @@
     padding: 0 1rem;
   }
 }
+.footer-container {
+  font-size: 0.6rem;
+}
+
 html, body {
   height: 100%;
 }
@@ -59,16 +63,16 @@ html, body {
 }
 
 .login-form-container {
-  padding: 2rem 3rem;
+  padding: 1rem;
   position: relative;
   z-index: 10;
   background-color: #fff;
 }
 .login-form-container .login-form {
   width: 100%;
-  padding: 4rem 5rem;
+  padding: 3rem 4rem;
   box-shadow: 0 4px 20px;
-  height: auto;
+  height: 100%;
 }
 .login-form-container .login-psu-logo {
   margin: 0;
@@ -80,6 +84,11 @@ html, body {
 
 .login-psu-logo {
   margin: 50px;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 575.98px) {
