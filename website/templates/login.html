@@ -18,7 +18,7 @@
             <img class="login-psu-logo align-self-center" src="{{ url_for('static', filename='images/PSULOGO.png') }}" alt="PSU LOGO">
             <p class="login-student-portal align-self-center">STUDENT PORTAL</p>
             <hr>
-            <form action="{{ url_for('login_page') }}" method="POST" novalidate class="flex-grow-1 needs-validation">
+            <form action="{{ url_for('login_page') }}" method="POST" novalidate class="flex-grow-1">
                 {{ login_form.hidden_tag() }}
                 <div class="form-floating mb-3">
                     {{ login_form.psu_id(class = 'form-control', placeholder='19-UR-1234')}}
