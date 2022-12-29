@@ -20,13 +20,13 @@ class Student(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
     # model relationship objects
-    student_personal_information = relationship("StudentInformation", back_populates="student")
-    student_contact_information = relationship("StudentInformation", back_populates="student")
-    student_emergency_information = relationship("StudentInformation", back_populates="student")
-    student_other_information = relationship("StudentInformation", back_populates="student")
+    student_personal_information = relationship("StudentPersonalInformation", back_populates="student")
+    student_contact_information = relationship("StudentContactInformation", back_populates="student")
+    student_emergency_information = relationship("StudentEmergencyInformation", back_populates="student")
+    student_other_information = relationship("StudentOtherInformation", back_populates="student")
 
     # Columns
-    student_id_number = db.Column(db.String(10), unique=True, nullable=False)
+    student_id_number = db.Column(db.String, unique=True, nullable=False)
     student_fullname = db.Column(db.String, nullable=False)
     student_password = db.Column(db.String, nullable=False)
 
