@@ -13,11 +13,11 @@ def validate_password(form, field):
         If the password does not match, raise an error
     """
     user = Student.query.filter_by(student_id_number=form.psu_id.data).first()
-    try:
+    if user:
         if not user.student_password == field.data:
             raise ValidationError(message="Wrong password.")
-    except:
-        raise ValidationError()
+            
+    raise ValidationError()
 
 
 def validate_user(form, field):
