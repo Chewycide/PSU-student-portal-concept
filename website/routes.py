@@ -24,22 +24,18 @@ def logout():
 def login_page():
     """Login route"""
     login_form = LoginForm()
-    if login_form.validate_on_submit():
 
+    if login_form.validate_on_submit():
         # Check if user is in the database
         user_queried = Student.query.filter_by(student_id_number=login_form.psu_id.data).first()
-        password = login_form.password.data
+
         if user_queried:
-
-            # Check if password matches
-            if password == user_queried.student_password:
-                login_user(user_queried)
-                return redirect(url_for('main_menu'))
-
-            flash('Wrong Password')
-            return redirect(url_for('login_page'))
+            login_user(user_queried)
+            return redirect(url_for('main_menu'))
 
         flash("User does not exist. Please contact an Admin to register you to the database.")
+        return redirect(url_for('login_page'))
+
     return render_template('login.html', login_form = login_form)
 
 
