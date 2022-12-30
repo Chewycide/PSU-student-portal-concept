@@ -13,9 +13,18 @@ def validate_password(form, field):
         If the password does not match, raise an error
     """
     user = Student.query.filter_by(student_id_number=form.psu_id.data).first()
-    if not user.student_password == field.data:
-        raise ValidationError(message="Wrong Password")
+    try:
+        if not user.student_password == field.data:
+            raise ValidationError(message="Wrong password.")
+    except:
+        raise ValidationError()
 
 
-
-# TODO: create a custom validator for user
+def validate_user(form, field):
+    """
+        Check if user is not in the database then raise an error. This
+        validator is expected to be in the PSU ID field.
+    """
+    user = Student.query.filter_by(student_id_number=form.psu_id.data).first()
+    if not user:
+        raise ValidationError(message="User does not exist. Please contact an Admin to register you to the database.")
