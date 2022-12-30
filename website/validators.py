@@ -16,8 +16,8 @@ def validate_password(form, field):
     if user:
         if not user.student_password == field.data:
             raise ValidationError(message="Wrong password.")
-            
-    raise ValidationError()
+    else:    
+        raise ValidationError()
 
 
 def validate_user(form, field):

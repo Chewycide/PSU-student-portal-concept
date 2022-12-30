@@ -24,7 +24,7 @@ def logout():
 def login_page():
     """Login route"""
     login_form = LoginForm()
-
+    
     if login_form.validate_on_submit():
         # Get user from the database
         user_queried = Student.query.filter_by(student_id_number=login_form.psu_id.data).first()
