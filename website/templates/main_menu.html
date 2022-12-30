@@ -30,7 +30,7 @@
             <div class="card-body">
                 <img src="{{ url_for('static', filename='images/user.png') }}" alt="profilePic" class="profile-pic">
                 <hr>
-                <h3 class="card-title">19-UR-XXXX</h3>
+                <h3 class="card-title">{{ current_user.student_id_number }}</h3>
                 <h6 class="card-subtitle">LASTNAME, FIRSTNAME MIDDLEINITIAL</h6>
                 <p class="text-muted">BACHELOR OF SCIENCE IN SOMETHING</p>
                 <hr>

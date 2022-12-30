@@ -25,8 +25,21 @@ def login_page():
     """Login route"""
     login_form = LoginForm()
     if login_form.validate_on_submit():
-        # login_user()
-        return redirect(url_for('login_page'))
+
+        # Check if user is in the database
+        user_queried = Student.query.filter_by(student_id_number=login_form.psu_id.data).first()
+        password = login_form.password.data
+        if user_queried:
+
+            # Check if password matches
+            if password == user_queried.student_password:
+                login_user(user_queried)
+                return redirect(url_for('main_menu'))
+
+            flash('Wrong Password')
+            return redirect(url_for('login_page'))
+
+        flash("User does not exist. Please contact an Admin to register you to the database.")
     return render_template('login.html', login_form = login_form)
 
 
@@ -59,17 +72,19 @@ def register():
     print(registration_form.errors)
     if registration_form.validate_on_submit():
         # create a new user object
-        print(registration_form.validate_on_submit())
         new_user = Student(
             student_id_number=registration_form.student_id_number.data,
             student_fullname=registration_form.student_fullname.data,
             student_password=registration_form.student_password.data
         )
 
-
         db.session.add(new_user)
         db.session.commit()
+
         flash('Successfully registered')
         return redirect(url_for('login_page'))
     return render_template('register.html', registration_form=registration_form)
-    # TODO: FIX VALIDATION
+
+
+# TODO: add the ability of the user to edit their student's information at /studentmaster route
+# TODO: hash password
