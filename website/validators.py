@@ -1,5 +1,6 @@
 from website.models import Student
 from wtforms.validators import ValidationError
+from werkzeug.security import check_password_hash
 
 
 # ---------- VALIDATORS ---------- #
@@ -14,9 +15,9 @@ def validate_password(form, field):
     """
     user = Student.query.filter_by(student_id_number=form.psu_id.data).first()
     if user:
-        if not user.student_password == field.data:
+        if not check_password_hash(pwhash=user.student_password, password=field.data):
             raise ValidationError(message="Wrong password.")
-    else:    
+    else:
         raise ValidationError()
 
 

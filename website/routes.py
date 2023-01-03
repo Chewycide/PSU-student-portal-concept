@@ -3,6 +3,7 @@ from flask import render_template, redirect, url_for, flash
 from flask_login import logout_user, login_required, login_user
 from website.forms import LoginForm, RegisterStudentForm
 from website.models import Student
+from werkzeug.security import generate_password_hash
 
 
 # ---------- USER CALLBACK ---------- #
@@ -63,13 +64,17 @@ def student_master():
 def register():
     """Register user into the database. Used for testing for now"""
     registration_form = RegisterStudentForm()
-    print(registration_form.errors)
     if registration_form.validate_on_submit():
+        hashed_password = generate_password_hash(
+            password=registration_form.student_password.data,
+            method="pbkdf2:sha256",
+            salt_length=16
+        )
         # create a new user object
         new_user = Student(
             student_id_number=registration_form.student_id_number.data,
             student_fullname=registration_form.student_fullname.data,
-            student_password=registration_form.student_password.data
+            student_password=hashed_password
         )
 
         db.session.add(new_user)
@@ -81,4 +86,3 @@ def register():
 
 
 # TODO: add the ability of the user to edit their student's information at /studentmaster route
-# TODO: hash password
