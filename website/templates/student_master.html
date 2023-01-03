@@ -19,25 +19,87 @@
 
 <!-- CONTENT -->
 {% block content %}
-<div id="personalData" class="card">
-    <div class="card-body">
-        <h3 class="card-title">Personal Data</h3>
+<form action="">
+    <div id="personalData" class="card">
+        <div class="card-body">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col"><h3 class="card-title">Personal Data</h3></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key_label, value_data in personal_info_dict.items() %}
+                    <tr>
+                        <th scope="row" class="text-muted">{{ key_label }}</th>
+                        <td>{{ value_data }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
-<div id="contactInformation" class="card">
-    <div class="card-body">
-        <h3 class="card-title">Contact Information</h3>
+    <div id="contactInformation" class="card">
+        <div class="card-body">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col"><h3 class="card-title">Contact Information</h3></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key_label, value_data in contact_info_dict.items() %}
+                    <tr>
+                        <th scope="row" class="text-muted">{{ key_label }}</th>
+                        <td>{{ value_data }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
-<div id="emergencyContact" class="card">
-    <div class="card-body">
-        <h3 class="card-title">In Case of Emergency</h3>
+    <div id="emergencyContact" class="card">
+        <div class="card-body">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col"><h3 class="card-title">In Case of Emergency</h3></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key_label, value_data in emergency_info_dict.items() %}
+                    <tr>
+                        <th scope="row" class="text-muted">{{ key_label }}</th>
+                        <td>{{ value_data }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
-<div id="otherInformation" class="card">
-    <div class="card-body">
-        <h3 class="card-title">Other Information</h3>
+    <div id="otherInformation" class="card">
+        <div class="card-body">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col"><h3 class="card-title">Other Information</h3></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key_label, value_data in other_info_dict.items() %}
+                    <tr>
+                        <th scope="row" class="text-muted">{{ key_label }}</th>
+                        <td>{{ value_data }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+</form>
 {% endblock content %}
 

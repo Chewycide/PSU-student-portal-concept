@@ -61,10 +61,54 @@ def enrollment():
 @app.route('/studentmaster')
 @login_required
 def student_master():
-    """Student Master File Maintenance"""
-    # TODO: render the data based on the user that logged in
+    """
+        Student Master File Maintenance route
+
+        These dictionaries gets the current user's data from the database and
+        renders them to the website.
+    """
+    personal_info_dict = {
+        "Student ID No.": current_user.student_id_number,
+        "Surname" : current_user.student_personal_information[0].sur_name,
+        "First Name" : current_user.student_personal_information[0].first_name,
+        "Middle Name" : current_user.student_personal_information[0].middle_name,
+        "Sex" : current_user.student_personal_information[0].sex,
+        "Nationality" : current_user.student_personal_information[0].nationality,
+        "Religion" : current_user.student_personal_information[0].religion,
+        "Date of Birth" : current_user.student_personal_information[0].birth_date,
+        "Place of Birth" : current_user.student_personal_information[0].birth_place,
+        "Civil Status" : current_user.student_personal_information[0].civil_status,
+        "Birth Order" : current_user.student_personal_information[0].birth_order,
+        "LRN" : current_user.student_personal_information[0].learner_reference_num,
+        "Mother Tongue" : current_user.student_personal_information[0].mother_tongue,
+    }
+
+    contact_info_dict = {
+        "Postal Address" : current_user.student_contact_information[0].postal_address,
+        "Home Phone No." : current_user.student_contact_information[0].home_phone_no,
+        "Mobile Phone No." : current_user.student_contact_information[0].mobile_phone_no,
+        "E-mail Address" : current_user.student_contact_information[0].email_address,
+        "Residential Address" : current_user.student_contact_information[0].residential_address
+    }
+
+    emergency_info_dict = {
+        "Contact Person" : current_user.student_emergency_information[0].contact_person,
+        "Relationship" : current_user.student_emergency_information[0].cp_relationship,
+        "Home Phone No." : current_user.student_emergency_information[0].home_phone_no,
+        "Mobile Phone No." : current_user.student_emergency_information[0].mobile_phone_no
+    }
+
+    other_info_dict = {
+        "Financial Source" : current_user.student_other_information[0].financial_source,
+        "Date of Exam/Interview" : current_user.student_other_information[0].exam_interview_date
+    }
+
     return render_template(
         'student_master.html',
+        personal_info_dict=personal_info_dict,
+        contact_info_dict=contact_info_dict,
+        emergency_info_dict=emergency_info_dict,
+        other_info_dict=other_info_dict
     )
 
 
