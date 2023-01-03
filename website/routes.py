@@ -1,8 +1,14 @@
 from website import app, login_manager, db
 from flask import render_template, redirect, url_for, flash
-from flask_login import logout_user, login_required, login_user
+from flask_login import logout_user, login_required, login_user, current_user
 from website.forms import LoginForm, RegisterStudentForm
-from website.models import Student
+from website.models import (
+    Student,
+    StudentPersonalInformation,
+    StudentContactInformation,
+    StudentEmergencyInformation,
+    StudentOtherInformation
+)
 from werkzeug.security import generate_password_hash
 
 
@@ -57,7 +63,9 @@ def enrollment():
 def student_master():
     """Student Master File Maintenance"""
     # TODO: render the data based on the user that logged in
-    return render_template('student_master.html')
+    return render_template(
+        'student_master.html',
+    )
 
 
 @app.route('/registeruser', methods=['POST', 'GET'])
@@ -76,8 +84,29 @@ def register():
             student_fullname=registration_form.student_fullname.data,
             student_password=hashed_password
         )
-
         db.session.add(new_user)
+
+        # create Child objects
+        user_personal_info = StudentPersonalInformation()
+        user_personal_info.student = new_user
+
+        user_contact_info = StudentContactInformation()
+        user_contact_info.student = new_user
+
+        user_emergency_info = StudentEmergencyInformation()
+        user_emergency_info.student = new_user
+
+        user_additional_info = StudentOtherInformation()
+        user_additional_info.student = new_user
+
+        db.session.add_all(
+            [
+                user_personal_info,
+                user_contact_info,
+                user_emergency_info,
+                user_additional_info
+            ]
+        )
         db.session.commit()
 
         flash('Successfully registered')
