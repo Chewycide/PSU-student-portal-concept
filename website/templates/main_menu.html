@@ -31,7 +31,11 @@
                 <img src="{{ url_for('static', filename='images/user.png') }}" alt="profilePic" class="profile-pic">
                 <hr>
                 <h3 class="card-title">{{ current_user.student_id_number }}</h3>
-                <h6 class="card-subtitle">LASTNAME, FIRSTNAME MIDDLEINITIAL</h6>
+                <h6 class="card-subtitle">
+                    {{ current_user.student_personal_information[0].sur_name }},
+                    {{ current_user.student_personal_information[0].first_name }}
+                    {{ current_user.student_personal_information[0].middle_name }}
+                </h6>
                 <p class="text-muted">BACHELOR OF SCIENCE IN SOMETHING</p>
                 <hr>
                 <blockquote class="blockquote mb-0">
