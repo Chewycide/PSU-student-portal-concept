@@ -58,5 +58,5 @@ Learn about [Contributing](https://docs.github.com/en/get-started/quickstart/con
 
 ---
 
-### Reason why I created this
+### Purpose of the project
 To study Frontend and Backend Development.
